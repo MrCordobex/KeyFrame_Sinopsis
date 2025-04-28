@@ -27,7 +27,7 @@ def extraer_embeddings_de_carpeta(carpeta):
     modelo.fc = torch.nn.Identity()
     modelo.eval().to(device)
     embeddings, nombres = [], []
-    archivos = [f for f in os.listdir(carpeta) if f.lower().endswith(".jpg")]
+    archivos = sorted([f for f in os.listdir(carpeta) if f.lower().endswith(".jpg")])
     for archivo in tqdm(archivos, desc="Procesando imágenes"):
         img = cargar_imagen(os.path.join(carpeta, archivo))
         t = transformacion(img).unsqueeze(0).to(device)
