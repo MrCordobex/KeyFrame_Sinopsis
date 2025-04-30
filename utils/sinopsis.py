@@ -6,7 +6,7 @@ import os
 import re
 import shutil
 
-def time_series(df_final, plot_series=False, window=21):
+def time_series(df_final, plot_series=False, window=11):
     # 1) Copiar DataFrame y crear pivot
     df = df_final.copy()
     df['frame_idx'] = range(len(df))
