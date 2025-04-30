@@ -25,7 +25,7 @@ def yolo_prediction(df_cleaned,model_path,input,output,filter,conf_threshold=0.2
     # ---------- Bucle de inferencia ----------
     for image_name in tqdm(df['frame_id'], desc="Procesando frames"):
         img_path = os.path.join(input_folder, image_name)
-        results  = model(img_path, classes=classes_filter, verbose=False)
+        results  = model(img_path, classes=classes_filter,conf=conf_threshold, verbose=False)
         r        = results[0]
 
         # 1) Guardar imagen con predicción
