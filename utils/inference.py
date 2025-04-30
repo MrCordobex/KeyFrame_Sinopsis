@@ -72,10 +72,10 @@ def yolo_prediction(df_cleaned,model_path,input,output,filter,conf_threshold=0.2
 
     # 3) Definir pesos (deben sumar 1)
     weights = {
-        'n_dets_norm':     0.2,
+        'n_dets_norm':     0.1,
         'n_classes_norm':  0.2,
-        'score_max_norm':  0.5,
-        'area_total_norm': 0.1
+        'score_max_norm':  0.65,
+        'area_total_norm': 0.05
     }
 
     # 4) Calcular frame_score como suma ponderada
